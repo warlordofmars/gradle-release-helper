@@ -24,8 +24,25 @@ class ReleaseHelperPlugin implements Plugin<Project> {
                 overwrite true
             }
 
-        }
-        
-    }
+            if(project.tasks.findByName('deploy')) {
+                if(project.tasks.containsKey('build')) {
+                    project.deploy.mustRunAfter project.build
+                    project.tasks['githubRelease'].mustRunAfter project.build
+                }
+                if(System.env.containsKey('PROMOTE')) {
+                    project.deploy.dependsOn project.tasks['githubRelease']
+                }
+            } else {
+                project.task('deploy') {
+                    if(project.tasks.findByName('build')) {
+                        mustRunAfter build
+                    }
+                    if(System.env.containsKey('PROMOTE')) {
+                        dependsOn tasks['githubRelease']
+                    }
+                }
+            }
 
+        }
+    }
 }
