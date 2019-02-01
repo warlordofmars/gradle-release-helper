@@ -35,10 +35,10 @@ class ReleaseHelperPlugin implements Plugin<Project> {
             } else {
                 project.task('deploy') {
                     if(project.tasks.findByName('build')) {
-                        mustRunAfter build
+                        mustRunAfter project.build
                     }
                     if(System.env.containsKey('PROMOTE')) {
-                        dependsOn tasks['githubRelease']
+                        dependsOn project.tasks['githubRelease']
                     }
                 }
             }
