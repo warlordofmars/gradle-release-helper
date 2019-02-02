@@ -1,10 +1,4 @@
 buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        jcenter()
-        
-    }
     dependencies {
         classpath "com.squareup.okhttp3:okhttp:3.8.1"
         classpath "org.zeroturnaround:zt-exec:1.10"
@@ -29,15 +23,6 @@ dependencies {
     compile "com.j256.simplemagic:simplemagic:1.10"
 }
 
-repositories {
-    // mavenCentral()
-    // jcenter()
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-}
-
-group = 'com.github.warlordofmars'
 version = scmVersion.version
 
 
