@@ -43,3 +43,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Using [axion-release-plugin](https://github.com/allegro/axion-release-plugin) to provide automatic versioning and git tagging
 * Using [github-release-gradle-plugin](https://github.com/BreadMoirai/github-release-gradle-plugin) to automate publishing releases to GitHub
+* Using the [warlordofmars](https://github.com/warlordofmars) custom gradle distribution [warlordofmars-gradle](https://github.com/warlordofmars/warlordofmars-gradle) in order to define default repositories to avoid duplication across all projects
+* Using the [warlordofmars](https://github.com/warlordofmars) jenkins pipeline library [jenkins-library](https://github.com/warlordofmars/jenkins-library) for re-usable CI/CD pipeline components
